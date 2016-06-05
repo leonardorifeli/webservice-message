@@ -1,4 +1,15 @@
-webservice-twitter-sy
+Hermes Message
 =====================
+That project is a Web Service API that integrates with Twitter to list and send tweet of an account.
 
-A Symfony project created on June 5, 2016, 6:28 pm.
+How to use?
+=====================
+Please, wait the text.
+
+Conclusion
+========================
+You can fork that and developer your needs, after you can send a pull request.
+
+License
+========================
+[MIT License](http://leonardorifeli.mit-license.org/) © Leonardo Rifeli
