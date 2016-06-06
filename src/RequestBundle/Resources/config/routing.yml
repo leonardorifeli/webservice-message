@@ -1,0 +1,3 @@
+request_homepage:
+    path:     /
+    defaults: { _controller: RequestBundle:Default:index }
