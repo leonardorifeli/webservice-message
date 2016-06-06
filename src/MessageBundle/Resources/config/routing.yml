@@ -1,0 +1,3 @@
+send_message_homepage:
+    path:     /
+    defaults: { _controller: MessageBundle:Default:index }

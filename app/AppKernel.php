@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new RequestBundle\RequestBundle(),
             new ListMessageBundle\ListMessageBundle(),
-            new SendMessageBundle\SendMessageBundle(),
+            new MessageBundle\MessageBundle(),
             new ApiBundle\ApiBundle(),
         );
 

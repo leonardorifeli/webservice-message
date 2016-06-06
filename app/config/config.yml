@@ -4,7 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: "@RequestBundle/Resources/config/services.yml" }
     - { resource: "@ListMessageBundle/Resources/config/services.yml" }
-    - { resource: "@SendMessageBundle/Resources/config/services.yml" }
+    - { resource: "@MessageBundle/Resources/config/services.yml" }
     - { resource: "@ApiBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
