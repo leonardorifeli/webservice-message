@@ -4,45 +4,50 @@ namespace ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/*
-* @ORM\Table(name="access_token")
-*/
+/**
+ * AccessToken
+ *
+ * @ORM\Table(name="access_token")
+ * @ORM\Entity
+ */
 class AccessToken
 {
     /**
-     * @var int
-     */
-    private $id;
-
-    /**
      * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=255, nullable=false)
      */
     private $token;
 
     /**
-     * @var \DateTime
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     */
-    private $updatedAt;
-
-    /**
-     * @var bool
+     * @var integer
+     *
+     * @ORM\Column(name="is_active", type="integer", nullable=false)
      */
     private $isActive;
 
     /**
-     * Get id
+     * @var \DateTime
      *
-     * @return integer 
+     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $updatedAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+     */
+    private $createdAt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
      * Set token
@@ -68,26 +73,26 @@ class AccessToken
     }
 
     /**
-     * Set createdAt
+     * Set isActive
      *
-     * @param \DateTime $createdAt
+     * @param integer $isActive
      * @return AccessToken
      */
-    public function setCreatedAt($createdAt)
+    public function setIsActive($isActive)
     {
-        $this->createdAt = $createdAt;
+        $this->isActive = $isActive;
 
         return $this;
     }
 
     /**
-     * Get createdAt
+     * Get isActive
      *
-     * @return \DateTime 
+     * @return integer 
      */
-    public function getCreatedAt()
+    public function getIsActive()
     {
-        return $this->createdAt;
+        return $this->isActive;
     }
 
     /**
@@ -114,25 +119,35 @@ class AccessToken
     }
 
     /**
-     * Set isActive
+     * Set createdAt
      *
-     * @param boolean $isActive
+     * @param \DateTime $createdAt
      * @return AccessToken
      */
-    public function setIsActive($isActive)
+    public function setCreatedAt($createdAt)
     {
-        $this->isActive = $isActive;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get isActive
+     * Get createdAt
      *
-     * @return boolean 
+     * @return \DateTime 
      */
-    public function getIsActive()
+    public function getCreatedAt()
     {
-        return $this->isActive;
+        return $this->createdAt;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

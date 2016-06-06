@@ -14,4 +14,27 @@ class ApiMessageService
 		$this->messageService = $messageService;
 	}
 
+	private function getMessageService()
+	{
+		return $this->messageService;
+	}
+
+	public function create($data, $accessToken)
+	{
+		$data = $this->decodeData($data);
+		if(!$data) throw new \Exception("The data is empty.", 1);
+		
+		$data->token = $accessToken;
+		
+		$message = $this->getMessageService()->create($data);
+		if(!$message) throw new \Exception("The message not sent.", 1);
+		
+		return $message;
+	}
+
+	private function decodeData($data)
+	{
+		return json_decode($data);
+	}
+
 }

@@ -9,16 +9,16 @@ use Symfony\Component\HttpFoundation\Request;
 class SendMessageController extends Controller
 {
 
-	private $messageService;
+	private $apiMessageService;
 	private $accessTokenSecurityService;
 
-	private function getMessageService()
+	private function getApiMessageService()
 	{
-		if($this->messageService) return $this->messageService;
+		if($this->apiMessageService) return $this->apiMessageService;
 
-		$this->messageService = $this->get('api.message.service');
+		$this->apiMessageService = $this->get('api.message.service');
 
-		return $this->managerService;
+		return $this->apiMessageService;
 	}
 
 	private function getAccessTokenSecurityService()
@@ -34,8 +34,26 @@ class SendMessageController extends Controller
     {
     	try {
     		$token = $this->getAccessTokenSecurityService()->validateRequestAccessToken($request->headers);
+
+    		$response = $this->getApiMessageService()->create($request->get('data'), $token->getId());
+
+    		if($request) {
+    			$dataResponse = json_encode([
+	    			'status' => 'success', 
+	    			'message' => 'Added message'. $response->getMessage(),
+	    			'hasError' => false
+	    		]);
+
+	    		$response = $this->getResponse($dataResponse);
+    		}
+
     	} catch (\Exception $e) {
-    		$dataResponse = json_encode(['error' => $e->getMessage()]);
+    		$dataResponse = json_encode([
+    			'status' => 'error', 
+    			'message' => $e->getMessage(),
+    			'hasError' => true
+    		]);
+
     		$response = $this->getResponse($dataResponse);
     	}
 

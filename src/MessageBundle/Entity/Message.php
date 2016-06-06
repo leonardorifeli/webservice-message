@@ -17,12 +17,12 @@ class Message
     /**
      * @var string
      */
-    private $content;
+    private $message;
 
     /**
      * @var int
      */
-    private $accessToken;
+    private $token;
 
     /**
      * @var \DateTime
@@ -33,11 +33,6 @@ class Message
      * @var \DateTime
      */
     private $updatedAt;
-
-    /**
-     * @var int
-     */
-    private $status;
 
 
     /**
@@ -51,49 +46,49 @@ class Message
     }
 
     /**
-     * Set content
+     * Set message
      *
-     * @param string $content
+     * @param string $message
      * @return Message
      */
-    public function setContent($content)
+    public function setMessage($message)
     {
-        $this->content = $content;
+        $this->message = $message;
 
         return $this;
     }
 
     /**
-     * Get content
+     * Get message
      *
      * @return string 
      */
-    public function getContent()
+    public function getMessage()
     {
-        return $this->content;
+        return $this->message;
     }
 
     /**
-     * Set accessToken
+     * Set token
      *
-     * @param integer $accessToken
+     * @param integer $token
      * @return Message
      */
-    public function setAccessToken($accessToken)
+    public function setToken($token)
     {
-        $this->accessToken = $accessToken;
+        $this->token = $token;
 
         return $this;
     }
 
     /**
-     * Get accessToken
+     * Get token
      *
      * @return integer 
      */
-    public function getAccessToken()
+    public function getToken()
     {
-        return $this->accessToken;
+        return $this->token;
     }
 
     /**
@@ -140,28 +135,5 @@ class Message
     public function getUpdatedAt()
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * Set status
-     *
-     * @param integer $status
-     * @return Message
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return integer 
-     */
-    public function getStatus()
-    {
-        return $this->status;
     }
 }

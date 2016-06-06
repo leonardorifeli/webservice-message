@@ -25,9 +25,7 @@ class AccessTokenSecurityService
 	{
 		$requestToken = $headerBag->get('token');
 		if(!$requestToken) throw new \Exception("Access Token uninformed. Please, check.", 1);
-
-		var_dump($this->getRepository());
-		die;
+		
 		$token = $this->getAccessTokenByToken($requestToken);
 
 		return $token;

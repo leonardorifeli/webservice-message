@@ -1,4 +1,4 @@
 services:
       message.service:
-        class: MessageBundle\Business\MessageService
+        class: MessageBundle\Business\Service\MessageService
         arguments: ["@doctrine.orm.entity_manager"]
