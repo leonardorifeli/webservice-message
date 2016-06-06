@@ -1,0 +1,3 @@
+list_message_homepage:
+    path:     /
+    defaults: { _controller: ListMessageBundle:Default:index }
