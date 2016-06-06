@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new RequestBundle\RequestBundle(),
-            new ListMessageBundle\ListMessageBundle(),
             new MessageBundle\MessageBundle(),
             new ApiBundle\ApiBundle(),
         );

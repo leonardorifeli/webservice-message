@@ -5,11 +5,7 @@ api:
 send_message:
     resource: "@MessageBundle/Resources/config/routing.yml"
     prefix:   /
-
-list_message:
-    resource: "@ListMessageBundle/Resources/config/routing.yml"
-    prefix:   /
-
+    
 request:
     resource: "@RequestBundle/Resources/config/routing.yml"
     prefix:   /
