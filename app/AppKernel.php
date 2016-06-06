@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new RequestBundle\RequestBundle(),
             new ListMessageBundle\ListMessageBundle(),
             new SendMessageBundle\SendMessageBundle(),
+            new ApiBundle\ApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
