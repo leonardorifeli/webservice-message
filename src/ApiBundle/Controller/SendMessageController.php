@@ -90,6 +90,36 @@ class SendMessageController extends Controller
 		return $response;
     }
 
+    public function listAction(Request $request, $page, $limit, $offset)
+    {
+        try {
+            $token = $this->getAccessTokenSecurityService()->validateRequestAccessToken($request->headers);
+
+            $response = $this->getApiMessageService()->listMessage($page, $limit, $offset);
+
+            if($request) {
+                $dataResponse = json_encode([
+                    'status' => 'success',
+                    'entities' => $response,
+                    'hasError' => false
+                ]);
+
+                $response = $this->getResponse($dataResponse);
+            }
+
+        } catch (\Exception $e) {
+            $dataResponse = json_encode([
+                'status' => 'error', 
+                'message' => $e->getMessage(),
+                'hasError' => true
+            ]);
+
+            $response = $this->getResponse($dataResponse);
+        }
+
+        return $response;
+    }
+
     private function getResponse($content)
     {
     	$response = new Response($content);

@@ -40,6 +40,8 @@ class ApiMessageService
 		return $message;
 	}
 
+	public function list()
+
 	private function decodeData($data)
 	{
 		return json_decode($data);
