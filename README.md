@@ -62,7 +62,7 @@ Result:
 ```json
 {
 	"status": "success",
-	"entities":
+	"entities": {
 		"0":  {
 			"id": 3,
 			"message": "lorem ipsum dolor sit amet",
@@ -74,7 +74,8 @@ Result:
 			"message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"createdAt": "16/06/2016 19:39:12",
 			"updatedAt": "16/06/2016 19:39:12"
-		},
+		}
+	},
 	"hasError": false,
 	"page": "1",
 	"limit": "2"
