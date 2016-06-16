@@ -63,13 +63,13 @@ Result:
 {
 	"status": "success",
 	"entities":
-		0:  {
+		"0":  {
 			"id": 3,
 			"message": "lorem ipsum dolor sit amet",
 			"createdAt": "16/06/2016 19:38:21",
 			"updatedAt": "16/06/2016 19:38:21"
 		},
-		1:  {
+		"1":  {
 			"id": 4,
 			"message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"createdAt": "16/06/2016 19:39:12",
