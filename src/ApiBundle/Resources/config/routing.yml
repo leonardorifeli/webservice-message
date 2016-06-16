@@ -1,3 +1,14 @@
-api_homepage:
-    path:     /
-    defaults: { _controller: ApiBundle:Default:index }
+api_message_send:
+    path:     /message/create
+    defaults: { _controller: ApiBundle:SendMessage:create }
+    methods:  [PUT, GET]
+
+api_message_delete:
+    path:     /message/{id}/delete
+    defaults: { _controller: ApiBundle:SendMessage:delete }
+    methods:  [DELETE]
+
+api_message_list:
+    path:     /message/list/{page}/{limit}
+    defaults: { _controller: ApiBundle:SendMessage:list }
+    methods:  [GET]

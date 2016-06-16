@@ -1,6 +1,6 @@
 api:
     resource: "@ApiBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /api
 
 send_message:
     resource: "@MessageBundle/Resources/config/routing.yml"
@@ -8,5 +8,5 @@ send_message:
     
 request:
     resource: "@RequestBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /request
 
