@@ -36,12 +36,13 @@ token: your-access-token
 data: {"message":"Your message"}
 
 Result:
-
+```json
 {
 	"status": "success"
 	"message": "Added message teste para Social Base"
 	"hasError": false
 }
+```
 
 List message
 =====================
@@ -85,18 +86,22 @@ Content-Type: application/x-www-form-urlencoded
 token: your-access-token
 
 Result:
+```json
 {
 	"status": "success"
 	"message": "Deleted message lorem ipsum dolor sit amet"
 	"hasError": false
 }
+```
 
 For all URL, if you will request using incorrect access token, the result:
+```json
 {
 	"status": "error"
 	"message": "Invalid Access Token"
 	"hasError": true
 }
+```
 
 Conclusion
 ========================
