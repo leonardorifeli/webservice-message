@@ -33,7 +33,12 @@ Content-Type: application/x-www-form-urlencoded
 token: your-access-token
 
 **Parameters data:**
-data: {"message":"Your message"}
+data: 
+```json
+{
+	"message": "Your message"
+}
+```
 
 Result:
 ```json
