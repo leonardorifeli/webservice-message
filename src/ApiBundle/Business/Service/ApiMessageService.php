@@ -40,7 +40,24 @@ class ApiMessageService
 		return $message;
 	}
 
-	public function list()
+	public function listMessage($page, $limit)
+	{
+		$entities = $this->getMessageService()->listMessage($page, $limit);
+
+		$data = [];
+		foreach($entities as $entity) {
+			$response = [
+				'id' => $entity->getId(),
+				'message' => $entity->getMessage(),
+				'createdAt' => $entity->getCreatedAt()->format('d/m/Y H:i:s'),
+				'updatedAt' => $entity->getUpdatedAt()->format('d/m/Y H:i:s'),
+			];
+
+			$data[] = $response;
+		}
+
+		return $data;
+	}
 
 	private function decodeData($data)
 	{

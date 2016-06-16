@@ -67,6 +67,15 @@ class MessageService implements MessageServiceInterface
 		return $messages;
 	}
 
+	public function listMessage($page, $limit)
+	{
+		$offset = ($page-1)*$limit;
+
+		$entities = $this->getRepository()->findByPageAndLimitOrderedByMessage($page, $limit, $offset);
+
+		return $entities;
+	}
+
 	private function getInstance($data)
 	{
 		if(!$data) return null;
