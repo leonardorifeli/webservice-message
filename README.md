@@ -53,7 +53,7 @@ Content-Type: application/x-www-form-urlencoded
 token: your-access-token
 
 Result:
-
+```json
 {
 	"status": "success"
 	"entities": [2]
@@ -73,6 +73,7 @@ Result:
 	"page": "1"
 	"limit": "2"
 }
+```
 
 List message
 =====================
