@@ -43,8 +43,8 @@ data:
 Result:
 ```json
 {
-	"status": "success"
-	"message": "Added message teste para Social Base"
+	"status": "success",
+	"message": "Added message teste para Social Base",
 	"hasError": false
 }
 ```
@@ -61,22 +61,22 @@ token: your-access-token
 Result:
 ```json
 {
-	"status": "success"
-	"entities": [2]
+	"status": "success",
+	"entities":
 		0:  {
-			"id": 3
-			"message": "lorem ipsum dolor sit amet"
-			"createdAt": "16/06/2016 19:38:21"
+			"id": 3,
+			"message": "lorem ipsum dolor sit amet",
+			"createdAt": "16/06/2016 19:38:21",
 			"updatedAt": "16/06/2016 19:38:21"
-		}
+		},
 		1:  {
-			"id": 4
-			"message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-			"createdAt": "16/06/2016 19:39:12"
+			"id": 4,
+			"message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"createdAt": "16/06/2016 19:39:12",
 			"updatedAt": "16/06/2016 19:39:12"
 		}
-	"hasError": false
-	"page": "1"
+	"hasError": false,
+	"page": "1",
 	"limit": "2"
 }
 ```
@@ -93,8 +93,8 @@ token: your-access-token
 Result:
 ```json
 {
-	"status": "success"
-	"message": "Deleted message lorem ipsum dolor sit amet"
+	"status": "success",
+	"message": "Deleted message lorem ipsum dolor sit amet",
 	"hasError": false
 }
 ```
@@ -102,8 +102,8 @@ Result:
 For all URL, if you will request using incorrect access token, the result:
 ```json
 {
-	"status": "error"
-	"message": "Invalid Access Token"
+	"status": "error",
+	"message": "Invalid Access Token",
 	"hasError": true
 }
 ```
