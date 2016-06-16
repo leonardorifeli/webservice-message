@@ -32,9 +32,12 @@ class ApiMessageService
 		return $message;
 	}
 
-	public function delete($id, $accessToken)
+	public function delete($id)
 	{
+		$message = $this->getMessageService()->delete($id);
+		if(!$message) throw new \Exception("The message not delete.", 1);
 		
+		return $message;
 	}
 
 	private function decodeData($data)

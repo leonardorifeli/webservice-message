@@ -65,7 +65,7 @@ class SendMessageController extends Controller
     	try {
     		$token = $this->getAccessTokenSecurityService()->validateRequestAccessToken($request->headers);
 
-    		$response = $this->getApiMessageService()->delete($id, $token->getId());
+    		$response = $this->getApiMessageService()->delete($id);
 
     		if($request) {
     			$dataResponse = json_encode([

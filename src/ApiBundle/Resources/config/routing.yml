@@ -6,4 +6,4 @@ api_message_send:
 api_message_delete:
     path:     /message/{id}/delete
     defaults: { _controller: ApiBundle:SendMessage:delete }
-    methods:  [GET]
+    methods:  [DELETE]

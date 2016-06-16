@@ -5,49 +5,59 @@ namespace ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * AccessToken
- *
+
  * @ORM\Table(name="access_token")
- * @ORM\Entity
+ * @ORM\Entity()
  */
 class AccessToken
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="token", type="string", length=255, nullable=false)
+     * @ORM\Column(name="token", type="string", length=255)
      */
     private $token;
 
     /**
-     * @var integer
+     * @var bool
      *
-     * @ORM\Column(name="is_active", type="integer", nullable=false)
+     * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
+     * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+     * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
 
+
     /**
-     * @var integer
+     * Get id
      *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer 
      */
-    private $id;
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set token
@@ -75,7 +85,7 @@ class AccessToken
     /**
      * Set isActive
      *
-     * @param integer $isActive
+     * @param boolean $isActive
      * @return AccessToken
      */
     public function setIsActive($isActive)
@@ -88,7 +98,7 @@ class AccessToken
     /**
      * Get isActive
      *
-     * @return integer 
+     * @return boolean 
      */
     public function getIsActive()
     {
@@ -139,15 +149,5 @@ class AccessToken
     public function getCreatedAt()
     {
         return $this->createdAt;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 }

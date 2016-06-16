@@ -44,12 +44,14 @@ class MessageService implements MessageServiceInterface
 
 	public function delete($id)
 	{
-		$message = $this->find($id);
+		$message = $this->getRepository()->find($id);
 
-		$this->delete($message);
+		$this->remove($message);
+
+		return $message;
 	}
 
-	private function delete(&$entity)
+	private function remove(&$entity)
 	{
 		$this->em->remove($entity);
 		$this->em->flush();
