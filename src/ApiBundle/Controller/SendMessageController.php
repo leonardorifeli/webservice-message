@@ -40,7 +40,7 @@ class SendMessageController extends Controller
     		if($request) {
     			$dataResponse = json_encode([
 	    			'status' => 'success', 
-	    			'message' => 'Added message'. $response->getMessage(),
+	    			'message' => 'Added message '. $response->getMessage(),
 	    			'hasError' => false
 	    		]);
 
@@ -70,7 +70,7 @@ class SendMessageController extends Controller
     		if($request) {
     			$dataResponse = json_encode([
 	    			'status' => 'success', 
-	    			'message' => 'Deleted message'. $response->getMessage(),
+	    			'message' => 'Deleted message '. $response->getMessage(),
 	    			'hasError' => false
 	    		]);
 
