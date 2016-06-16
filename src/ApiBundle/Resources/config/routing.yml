@@ -2,3 +2,8 @@ api_message_send:
     path:     /message/create
     defaults: { _controller: ApiBundle:SendMessage:create }
     methods:  [PUT, GET]
+
+api_message_delete:
+    path:     /message/{id}/delete
+    defaults: { _controller: ApiBundle:SendMessage:delete }
+    methods:  [GET]

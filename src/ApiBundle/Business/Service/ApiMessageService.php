@@ -32,6 +32,11 @@ class ApiMessageService
 		return $message;
 	}
 
+	public function delete($id, $accessToken)
+	{
+		
+	}
+
 	private function decodeData($data)
 	{
 		return json_decode($data);

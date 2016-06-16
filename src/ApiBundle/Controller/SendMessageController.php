@@ -60,6 +60,36 @@ class SendMessageController extends Controller
 		return $response;
     }
 
+    public function deleteAction(Request $request, $id)
+    {
+    	try {
+    		$token = $this->getAccessTokenSecurityService()->validateRequestAccessToken($request->headers);
+
+    		$response = $this->getApiMessageService()->delete($id, $token->getId());
+
+    		if($request) {
+    			$dataResponse = json_encode([
+	    			'status' => 'success', 
+	    			'message' => 'Deleted message'. $response->getMessage(),
+	    			'hasError' => false
+	    		]);
+
+	    		$response = $this->getResponse($dataResponse);
+    		}
+
+    	} catch (\Exception $e) {
+    		$dataResponse = json_encode([
+    			'status' => 'error', 
+    			'message' => $e->getMessage(),
+    			'hasError' => true
+    		]);
+
+    		$response = $this->getResponse($dataResponse);
+    	}
+
+		return $response;
+    }
+
     private function getResponse($content)
     {
     	$response = new Response($content);
